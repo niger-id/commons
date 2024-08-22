@@ -95,6 +95,7 @@ public class TemplateGenerator {
 			notificationLogger.info("templateTypeCode :::::::: "+templateTypeCode);
 			responseWrapper = (ResponseWrapper<?>) restClientService.getApi(ApiName.TEMPLATES, pathSegments, "", "",
 					ResponseWrapper.class);
+			notificationLogger.info("Response from te API :::::::: "+mapper.writeValueAsString(responseWrapper));
 			template = mapper.readValue(mapper.writeValueAsString(responseWrapper.getResponse()),
 					TemplateResponseDto.class);
 
