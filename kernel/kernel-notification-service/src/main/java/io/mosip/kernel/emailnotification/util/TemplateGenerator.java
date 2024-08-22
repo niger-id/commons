@@ -91,10 +91,8 @@ public class TemplateGenerator {
 			List<String> pathSegments = new ArrayList<>();
 			pathSegments.add(langCode);
 			pathSegments.add(templateTypeCode);
-			notificationLogger.info(LoggerFileConstant.SESSIONID.toString(), LoggerFileConstant.USERID.toString(), "",
-				"Language:::::: "+langCode );
-			notificationLogger.info(LoggerFileConstant.SESSIONID.toString(), LoggerFileConstant.USERID.toString(), "",
-				"templateTypeCode :::::::: "+templateTypeCode );
+			notificationLogger.info("Language:::::: "+langCode );
+			notificationLogger.info("templateTypeCode :::::::: "+templateTypeCode);
 			responseWrapper = (ResponseWrapper<?>) restClientService.getApi(ApiName.TEMPLATES, pathSegments, "", "",
 					ResponseWrapper.class);
 			template = mapper.readValue(mapper.writeValueAsString(responseWrapper.getResponse()),
